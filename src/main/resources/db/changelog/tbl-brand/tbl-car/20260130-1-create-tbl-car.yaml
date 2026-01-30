@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - logicalFilePath: 20260130-1-create-tbl-car.yaml
+    changeSet:
+      id: 20260130-1-create-tbl-car.yaml
+      author: nurlanaliyev
+      changes:
+        - createTable:
+            tableName: car
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    unique: true
+                  autoIncrement: true
+                  incrementBy: 1
+                -column:
+                  name: model_id
+                  type: int
+                  constraints:
+                    nullable: true
+                  -column:
+                    name: vin
+                    type: varchar(20)
+                    constraints:
+                      nullable: true
+                    -column:
+                      name: registration_number
+                      type: varchar(10)
+                      constraints:
+                        nullable: true
+                      -column:
+                        name: mileage_km
+                        type: int
+                        constraints:
+                          nullable: true
+                        -column:
+                          name: production_year
+                          type: int
+                          constraints:
+                            nullable: false

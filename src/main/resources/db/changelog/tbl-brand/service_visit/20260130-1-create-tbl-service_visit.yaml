@@ -1,0 +1,46 @@
+databaseChangeLog:
+  -logicalFilePath: 20260130-1-create-tbl-service_visit.yaml
+  -changeSet:
+    id: 20260130-1-create-tbl-service_visit.yaml
+    author: nurlanaliyev
+    changes:
+      -createTable:
+        tableName: user_role
+        columns:
+          -column:
+            name: id
+            type: int
+            constraints:
+              primaryKey: true
+              unique: true
+              autoIncrement: true
+              incrementBy: 1
+              -column:
+                name: car_id
+                type: int
+                constraints:
+                  primaryKey: false
+                  unique: true
+                  autoIncrement: true
+                  incrementBy: 1
+                  -column:
+                    name: service_date
+                    type: TIMESTAMP
+                    constraints:
+                      nullable: true
+                    -column:
+                      name: odometer_km
+                      type: int
+                      constraints:
+                        nullable: true
+                        -column:
+                          name: service_type
+                          type: varchar(255)
+                          constraints:
+                            nullable: true
+                            -column:
+                              name: notes
+                              type: varchar(255)
+                              constraints:
+                                nullable: false
+

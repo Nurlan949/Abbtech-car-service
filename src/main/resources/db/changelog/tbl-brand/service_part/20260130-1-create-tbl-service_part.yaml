@@ -1,0 +1,39 @@
+databaseChangeLog:
+  -logicalFilePath: 20260130-1-create-tbl-service_part.yaml
+  -changeSet:
+    id: 20260130-1-create-tbl-service_part.yaml
+    author: nurlanaliyev
+    changes:
+      -createTable:
+        tableName: service_part
+        columns:
+          -column:
+            name: id
+            type: int
+            constraints:
+              primaryKey: true
+              unique: true
+              autoIncrement: true
+              incrementBy: 1
+              -column:
+                name: service_id
+                type: int
+                constraints:
+                  primaryKey: false
+                  unique: true
+                  autoIncrement: true
+                  incrementBy: 1
+                  -column:
+                    name: part_id
+                    type: int
+                    constraints:
+                      primaryKey: false
+                      unique: true
+                      autoIncrement: true
+                      incrementBy: 1
+                    -column:
+                      name: quantity
+                      type: int
+                      constraints:
+                        nullable: true
+

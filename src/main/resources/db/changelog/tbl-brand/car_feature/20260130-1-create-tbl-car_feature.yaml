@@ -1,0 +1,26 @@
+databaseChangeLog:
+  -logicalFilePath: 20260130-1-create-tbl-car_feature.yaml
+  -changeSet:
+    id: 20260130-1-create-tbl-car_feature.yaml
+    author: nurlanaliyev
+    changes:
+      -createTable:
+        tableName: car_feature
+        columns:
+         -column:
+            name: car_id
+            type: int
+            constraints:
+              primaryKey: true
+              unique: true
+            autoIncrement: true
+            incrementBy: 1
+          -column:
+            name: feature_id
+            type: int
+            constraints:
+              primaryKey: true
+              unique: true
+            autoIncrement: true
+            incrementBy: 1
+

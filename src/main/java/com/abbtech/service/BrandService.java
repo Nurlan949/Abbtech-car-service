@@ -2,6 +2,7 @@ package com.abbtech.service;
 
 import com.abbtech.dto.ReqBrandDto;
 import com.abbtech.dto.RespBrandDto;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

@@ -2,7 +2,7 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:postgresql://${HOST}:${PORT:5432}/${DB_NAME}?currentSchema=${SCHEMA}
+    url: jdbc:postgresql://${HOST}:${PORT:5432}/${postgres}?currentSchema=${car-service}
     driver-class-name: org.postgresql.Driver
     username: ${USERNAME}
     password: ${PAROL}
@@ -12,7 +12,7 @@ spring:
       maximum-pool-size: 10
       connection-timeout: 10000
       keepalive-time: 30000
-      schema: ${SCHEMA}
+      schema: public
   jpa:
     hibernate:
       ddl-auto: none

@@ -1,0 +1,31 @@
+databaseChangeLog:
+  -logicalFilePath: 20260130-1-create-tbl-feature.yaml
+  -changeSet:
+    id: 20260130-1-create-tbl-feature.yaml
+    author: nurlanaliyev
+    changes:
+      -createTable:
+        tableName: feature
+        columns:
+          -column:
+            name: id
+            type: int
+          constraints:
+            primaryKey: true
+            unique: true
+            autoIncrement: true
+            incrementBy: 1
+            -column:
+              name: feature_id
+              type: int
+              constraints:
+                -column:
+                  name: name
+                  type: varchar(255)
+                  -column:
+                    name: description
+                    type: varchar(255)
+                    -column:
+                      name: category
+                      type: varchar(255)
+

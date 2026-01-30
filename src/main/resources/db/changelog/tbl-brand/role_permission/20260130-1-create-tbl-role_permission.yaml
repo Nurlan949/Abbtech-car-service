@@ -1,0 +1,25 @@
+databaseChangeLog:
+  -logicalFilePath: 20260130-1-create-tbl-role_permission.yaml
+  -changeSet:
+    id: 20260130-1-create-tbl-role_permission.yaml
+    author: nurlanaliyev
+    changes:
+      -createTable:
+        tableName: role_permission
+        columns:
+          -column:
+            name: id
+            type: int
+            constraints:
+              primaryKey: true
+              unique: true
+              autoIncrement: true
+              incrementBy: 1
+              -column:
+                name: permission_id
+                type: int
+                constraints:
+                  primaryKey: true
+                  unique: true
+                  autoIncrement: true
+                  incrementBy: 1

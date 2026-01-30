@@ -6,21 +6,22 @@ import com.abbtech.service.BrandService;
 import com.abbtech.validation.BrandGroupA;
 import com.abbtech.validation.BrandGroupB;
 import jakarta.validation.Valid;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 @RestController
 @RequestMapping
-public class BrandController {
+public class classBrandController {
 
     private final BrandService brandService;
 
-    public BrandController(BrandService brandService) {
+    public classBrandController(BrandService brandService) {
         this.brandService = brandService;
     }
+
 
     @GetMapping("/brands")
     @ResponseStatus(HttpStatus.ACCEPTED)

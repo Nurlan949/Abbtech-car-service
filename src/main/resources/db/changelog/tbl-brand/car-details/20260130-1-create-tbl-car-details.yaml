@@ -1,0 +1,55 @@
+databaseChangeLog:
+  -logicalFilePath: 20260130-1-create-tbl-car-details.yaml
+  -changeSet:
+    id: 20260130-1-create-tbl-car-details.yaml
+    author: nurlanaliyev
+    changes:
+      -createTable:
+        tableName: car-details
+        columns:
+          -column:
+            name: id
+            type: int
+            constraints:
+              primaryKey: true
+              unique: true
+              autoIncrement: true
+              incrementBy: 1
+        -column:
+          name: car_id
+          type: int
+          constraints:
+            primaryKey: false
+            unique: true
+            autoIncrement: true
+            incrementBy: 1
+            -column:
+              name: engine_number
+              type: varchar(20)
+              constraints:
+                nullable: true
+                -column:
+                  name: registration_code
+                  type: varchar(20)
+                  constraints:
+                    nullable: true
+                    -column:
+                      name: fuel_type
+                      type: varchar(20)
+                      constraints:
+                        nullable: true
+                        -column:
+                          name: engine_capacity
+                          type: varchar(200)
+                          constraints:
+                            nullable: true
+                            -column:
+                              name: color
+                              type: varchar(255)
+                              constraints:
+                                nullable: false
+                                -column:
+                                  name: insurance_number
+                                  type: varchar(255)
+
+
