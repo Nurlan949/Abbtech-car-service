@@ -2,10 +2,10 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:postgresql://${HOST}:${PORT:5432}/${postgres}?currentSchema=${car-service}
+    url: jdbc:postgresql://${HOST:localhost}:${PORT:5432}/${DBName:postgres}?currentSchema=${SCHEMA:car-service}
     driver-class-name: org.postgresql.Driver
-    username: ${USERNAME}
-    password: ${PAROL}
+    username: ${USERNAME:postgres}
+    password: ${PASSWORD:Nurlan2006,}
     hikari:
       minimum-idle: 2
       idle-timeout: 40000
