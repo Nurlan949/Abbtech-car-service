@@ -1,39 +1,54 @@
 server:
   servlet:
-    context-path: /cars-app
+    context-path: /api-car
+  port: 8085
 spring:
-  liquibase:
-    enabled: false
-    change-log: src/main/resources/db.changelog/tbl-brand/20260126-create-tbl-brand.yaml
-  jpa:
-    hibernate:
-      ddl-auto:
-        update
-    show-sql: true
   profiles:
-    active:
-      local
-  application:
-    name: local
+    active: ${MY_PROFILE_NAME}
   datasource:
-
-    url: jdbc:postgresql://localhost:5432/car-service
-    username: ${USERNAME}
-    password: ${PASSWORD}
+    url: jdbc:postgresql://${HOST}:${PORT:5432}/${DB_NAME}?currentSchema=${SCHEMA}
     driver-class-name: org.postgresql.Driver
-
-
+    username: ${USERNAME}
+    password: ${PAROL}
     hikari:
-      schema: ${SCHEMA}
-      auto-commit: true
       minimum-idle: 2
       idle-timeout: 40000
       maximum-pool-size: 10
       connection-timeout: 10000
       keepalive-time: 30000
+      schema: ${SCHEMA}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    show-sql: true
+
+
+  sql:
+    init:
+      schema-locations: ${SCHEMA}
+  threads:
+    virtual:
+      enabled: true
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog.yaml
+
+course:
+  name: ABB Tech Academy
+  students: Asif, Vasif, Sajjad
+  teacher: TeacherName
+  address: Street Name
+  child:
+    country: CountryName
+    city: CityName
 
 jwt:
   secret: "CHANGE_TO_32+_CHAR_RANDOM_SECRET"
   access-exp: 360_000      # 5 min
   refresh-exp: 420_000     # 7 min
+
 

@@ -3,7 +3,7 @@ spring:
     url: jdbc:postgresql://${HOST:localhost}:${PORT:5432}/${DB_NAME:car}?currentSchema=${SCHEMA:car_service}
     driver-class-name: org.postgresql.Driver
     username: postgres
-    password: postgres
+    password: Nurlan2006,
     hikari:
       schema: car_service
       minimum-idle: 2
