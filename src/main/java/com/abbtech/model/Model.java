@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
-
 @Entity
 @Table(name = "model")
 @Getter
@@ -18,10 +17,6 @@ public class Model {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "brand_id", nullable = false)
-    private Brand brand;
-
     @Column(nullable = false, length = 255)
     private String name;
 
@@ -34,6 +29,11 @@ public class Model {
     @Column(name = "year_to")
     private Integer yearTo;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "brand_id", nullable = false)
+    private Brand brand;
+
     @OneToMany(mappedBy = "model", fetch = FetchType.LAZY)
     private List<Car> cars;
+
 }

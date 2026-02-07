@@ -44,4 +44,5 @@ public class Car {
             inverseJoinColumns = @JoinColumn(name = "feature_id")
     )
     private List<Feature> features;
+
 }

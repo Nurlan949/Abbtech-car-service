@@ -36,4 +36,5 @@ public class Brand {
 
     @OneToMany(mappedBy = "brand", fetch = FetchType.LAZY, cascade = {CascadeType.REMOVE, CascadeType.PERSIST}, orphanRemoval = true)
     private List<Model> models;
+
 }

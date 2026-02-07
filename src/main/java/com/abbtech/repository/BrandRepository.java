@@ -17,4 +17,5 @@ public interface BrandRepository extends JpaRepository<Brand, Integer> {
     @Override
     @EntityGraph(value = "Brand.models", type = EntityGraph.EntityGraphType.FETCH)
     List<Brand> findAll();
+
 }

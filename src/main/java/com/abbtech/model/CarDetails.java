@@ -37,4 +37,5 @@ public class CarDetails {
 
     @Column(name = "insurance_number", length = 255)
     private String insuranceNumber;
+
 }

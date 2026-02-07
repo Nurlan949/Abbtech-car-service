@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
-
 @Entity
 @Table(name = "feature")
 @Getter
@@ -33,4 +32,5 @@ public class Feature {
     // Optional reverse mapping
     @ManyToMany(mappedBy = "features", fetch = FetchType.LAZY)
     private List<Car> cars;
+
 }
