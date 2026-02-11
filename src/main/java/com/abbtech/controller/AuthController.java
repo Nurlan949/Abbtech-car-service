@@ -9,8 +9,13 @@ import com.abbtech.exception.AuthException;
 import com.abbtech.service.security.JwtService;
 import com.abbtech.service.security.RegisterService;
 import com.abbtech.service.security.UserDetailsServiceImpl;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import io.jsonwebtoken.Claims;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -23,6 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor
+@Slf4j
 public class AuthController {
 
     private final AuthenticationManager manager;
@@ -54,5 +60,4 @@ public class AuthController {
         UserDetails user = userDetailsService.loadUserByUsername(username);
         return new TokenResponseDto(jwt.accessToken(user), jwt.refreshToken(user));
     }
-
 }
