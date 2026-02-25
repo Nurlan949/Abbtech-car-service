@@ -1,7 +1,7 @@
 server:
   servlet:
     context-path: /api-car
-  port: 8085
+  port: 8080
 spring:
   profiles:
     active: ${MY_PROFILE_NAME}

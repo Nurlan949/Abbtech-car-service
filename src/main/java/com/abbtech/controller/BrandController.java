@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
 @RequestMapping("/brands")
-@PreAuthorize("hasRole('ADMIN')")
 public class BrandController {
 
     private final BrandService brandService;
