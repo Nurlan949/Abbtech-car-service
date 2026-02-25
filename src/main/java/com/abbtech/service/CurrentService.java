@@ -8,7 +8,6 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.net.URL;
-import java.util.ArrayList;
 
 @Service
 public class CurrentService {
